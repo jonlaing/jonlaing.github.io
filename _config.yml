@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Jon Laing
-location: Brookly, NY
+location: Brooklyn, NY
 email: info@jonlaing.com
 description: >- # this means to ignore newlines until "baseurl:"
   The horrible beast of legend, Jon Laing has terrorized the countrysides of Europe, Asia, and parts of Detroit for centuries.
