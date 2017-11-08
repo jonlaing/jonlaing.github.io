@@ -232,7 +232,9 @@ const fizzBuzz = (min, max) =>
 fizzBuzz(1, 100);
 ```
 
-## A Word About Abstraction
+[Project on Github](https://github.com/jonlaing/fizzbuzzjs)
+
+## Conclusion
 
 Okay, so this was obviously overkill for fizzbuzz, but I hope you got something out of the excercise. Abstracting to the most general form of the problem can help us construct future-proof(ish) implementations. It's upfront effort that will allow you to be lazy later.
 
@@ -243,5 +245,4 @@ Sometimes, a less general implementation is better, because it illuminates the p
 So, if your abstraction is hard to read and extend, **it's a shit abstraction** and you should go back to the drawing board before you get locked into it.
 
 But, if you can strike that balance, then it will benefit you and your team in the long run.
-
 
