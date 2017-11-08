@@ -2,7 +2,6 @@
 layout: post
 title: "An Over-Engineered Fizz Buzz"
 excerpt: "Ever wanted to take a simple problem and completely over think it in a futile attempt to learn something about the world in your place in it? Well, anyway, this is about \"Fizz Buzz\" and how to completely over engineer it, and also some ramblings about abstraction."
-categories: javascript programming functors
 ---
 
 Anyone who has spent any time around tech knows what Fizz Buzz is. It's basically a bare minimum indication that someone can at least use `if` statements.
