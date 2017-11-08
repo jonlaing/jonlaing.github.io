@@ -140,8 +140,8 @@ Let's see how we could implement fizz buzz with Functors:
 
 ```javascript
 // some convenience functions for readability
-const when(pred, f) => (n, text) => pred(n) ? f(text) : text;
-const isMultiple => x => y => y % x === 0;
+const when = (pred, f) => (n, text) => pred(n) ? f(text) : text;
+const isMultiple = x => y => y % x === 0;
 const concatString = s1 => s0 => s0 + s1;
 
 // implementing the Functor
@@ -177,6 +177,9 @@ Fizzer(13)
  The last part of the spec, was that it was supposed to print fizz buzz from 1-100, so let's do that. However, we know better than to just implement code exactly to the specifications. You're gunna finish all that work, and then your boss/client is going to say, "Oh, wait, actually, we want fizz buzz from 3 to 491". And what are you gunna say? "No problem! (if you pay me)"
 
 ```javascript
+const range = (min, max) =>
+  Array.from(Array(max - min + 1).keys(), x => x + min);
+
 const fizzIt = n =>
   Fizzer(n)
     .map(fizzbuzz(3, "Fizz"))
@@ -186,9 +189,9 @@ const fizzIt = n =>
     .done();
 
 const fizzBuzz = (min, max) =>
-  Array.from(Array(max - min).keys(), x => x + min)
+  range(min, max)
     .map(fizzIt)
-    .map(console.log);
+    .map(x => console.log(x));
 
 fizzBuzz(1, 100);
 ```
@@ -201,17 +204,19 @@ Okay, so we've had some fun, some laughs and some tears, but in the end we waste
 // fizzbuzz.js
 
 // some convenience functions for readability
-const when(pred, f) => (n, text) =>
-  pred(n) ? f(text) : text;
+const when = (pred, f) => (n, text) => pred(n) ? f(text) : text;
 
-const isMultiple => x => y => y % x === 0;
+const isMultiple = x => y => y % x === 0;
 
 const concatString = s1 => s0 => s0 + s1;
+
+const range = (min, max) =>
+  Array.from(Array(max - min + 1).keys(), x => x + min);
 
 // implementing the Functor
 const Fizzer = (n, text) => ({
   map: f => Fizzer(n, f(n, text || '')),
-  done: () => text.length > 0 ? text : n // get out of the functor
+  done: () => text && text.length > 0 ? text : n // get out of the functor
 });
 
 const fizzIt = n =>
@@ -221,9 +226,9 @@ const fizzIt = n =>
     .done();
 
 const fizzBuzz = (min, max) =>
-  Array.from(Array(max - min).keys(), x => x + min)
+  range(min, max)
     .map(fizzIt)
-    .map(console.log);
+    .map(x => console.log(x));
 
 fizzBuzz(1, 100);
 ```
