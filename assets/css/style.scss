@@ -1,0 +1,59 @@
+---
+---
+@import "{{ site.theme }}";
+
+.wrapper {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+section {
+  width: 70%;
+  padding-top: 15px;
+}
+
+header {
+  padding-left: 40px;
+  border-radius: 4px;
+  margin-top: 50px;
+
+  ul {
+    padding-top: 20px;
+  }
+}
+
+h1.header img {
+  width: 100%;
+  margin: -80px 0 0 -5px;
+  padding: 0 0 20px;
+  border: none;
+}
+
+blockquote {
+  font-size: 1.5em;
+  color: #888;
+  border-left: 1px solid #ccc;
+  font-family: "Arvo, Monaco, serif";
+}
+
+sub, sub {
+  font-size: 0.8em;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+sup {
+  vertical-align: super;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+
+  > span.previous, span.next {
+    color: #888;
+  }
+}

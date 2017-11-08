@@ -16,7 +16,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header"><a href="/"><img src="/assets/images/logo.png" alt="{{ site.title | default: site.github.repository_name }}" /></a></h1>
+        <h1 class="header"><a href="/">{{ site.title | default: site.github.repository_name }}</a></h1>
         <p class="header">{{ site.location }}</p>
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
@@ -30,7 +30,12 @@
         {% endif %}
       </header>
 
+
       <section>
+        <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+        <p class="author">
+          <span class="date">{{ page.date }}</span>
+        </p>
         {{ content }}
       </section>
 
