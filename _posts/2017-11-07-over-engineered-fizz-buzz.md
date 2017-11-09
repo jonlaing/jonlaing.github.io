@@ -26,7 +26,7 @@ Array.from(Array(100).keys(), x => x + 1)
   .map(console.log);
 ```
 
-Now, that's about as basic as it gets. It's essentially one stop up from *Hello, World*. It may seem absurd, but this implementation always bothered me. For such a simple task, this implentation lacks a sort of elegance. It's also not generalized at all. Of course in the case of fizzbuzz, generalization isn't really the point. I mean, afterall this really just a test to make sure the programmer in question at least made it to page 2 in their copy of *Programming For Dummies*. However, in the professional world, we rarely have problems that have such specific and limited specs. In my experience, the brute force option will get you done faster, but will ensure that your solution doesn't scale as soon as your client/management changes their minds.
+Now, that's about as basic as it gets. It's essentially one step up from *Hello, World*. It may seem absurd, but this implementation always bothered me. For such a simple task, this implentation lacks a sort of elegance. It's also not generalized at all. Of course in the case of fizzbuzz, generalization isn't really the point. I mean, afterall this really just a test to make sure the programmer in question at least made it to page 2 in their copy of *Programming For Dummies*. However, in the professional world, we rarely have problems that have such specific and limited specs. In my experience, the brute force option will get you done faster, but will ensure that your solution doesn't scale as soon as your client/management changes their minds.
 
 ## Robustness though Abstraction
 
@@ -163,10 +163,10 @@ For instance, now the spec has changed, and you need to internationalize fizzbuz
 
 ```javascript
 Fizzer(13)
-  .map(fizzbuzz(3, "Fizz"))
-  .map(fizzbuzz(5, "Buzz"))
-  .map(fizzbuzz(7, "Baz"))
-  .map(fizzbuzz(13, "Borf"))
+  .map(when(isMultiple(3), concatString("Fizz")))
+  .map(when(isMultiple(5), concatString("Buzz")))
+  .map(when(isMultiple(7), concatString("Baz")))
+  .map(when(isMultiple(13), concatString("Borf")))
   .map((n, text) => i18n(text))
   .done(); // "Το σκυλο μιλει, \"Μπορφ!\""
 ```
@@ -181,10 +181,10 @@ const range = (min, max) =>
 
 const fizzIt = n =>
   Fizzer(n)
-    .map(fizzbuzz(3, "Fizz"))
-    .map(fizzbuzz(5, "Buzz"))
-    .map(fizzbuzz(7, "Baz"))
-    .map(fizzbuzz(13, "Borf"));
+    .map(when(isMultiple(3), concatString("Fizz")))
+    .map(when(isMultiple(5), concatString("Buzz")))
+    .map(when(isMultiple(7), concatString("Baz")))
+    .map(when(isMultiple(13), concatString("Borf")))
     .done();
 
 const fizzBuzz = (min, max) =>
