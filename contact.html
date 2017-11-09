@@ -5,7 +5,18 @@ permalink: /contact/
 ---
 
 <h1>Contact</h1>
-<ul>
-  <li>Email: <a href="mailto:{{ site.email | encode_email }}">info [at] jonlaing [dot] com</a></li>
-  <li>LinkedIn: <a href="https://www.linkedin.com/in/jonlaing/">https://www.linkedin.com/in/jonlaing/</a></li>
-</ul
+
+<h3>Wanna get in touch? Drop me a line! I'm available for questions, comments, concerns
+hatemail, and <strong>freelance</strong>.</h3>
+
+<form action="https://formspree.io/{{ site.email | encode_email }}" method="POST" class="flex column">
+    <div class="flex row">
+      <input type="text" name="name" placeholder="Name">
+      <div class="spacer"></div>
+      <input type="email" name="_replyto" placeholder="you@email.com">
+    </div>
+    <input type="hidden" name="_subject" value="Message from jonlaing.github.io!">
+    <input type="text" name="subject" placeholder="Subject">
+    <textarea name="message" placeholder="Your message..."></textarea>
+    <input type="submit" value="Send" class="button">
+</form>
